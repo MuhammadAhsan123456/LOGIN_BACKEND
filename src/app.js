@@ -14,12 +14,12 @@ app.use(cookieParser());
 
 // server.js or app.js — jahan tumne express & cors use kiya hai
 
-app.use(
-  cors({
-    origin: "https://jocular-parfait-39ce10.netlify.app", // ✅ Netlify URL
-    credentials: true, // 🔐 allow cookies/auth headers
-  })
-);
+const cors = require("cors");
+app.use(cors({
+  origin: "https://dainty-marzipan-529b6a.netlify.app", // ✅ only one https://
+  credentials: true
+}));
+
 
 
 app.use(appRouter); 
