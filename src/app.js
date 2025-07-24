@@ -12,10 +12,15 @@ app.use(express.json())
 app.use(cookieParser());
 
 
-app.use(cors({
-  origin: "http://localhost:5173", // frontend port
-  credentials: true // cookie bhejne dena
-}));
+// server.js or app.js — jahan tumne express & cors use kiya hai
+
+app.use(
+  cors({
+    origin: "https://jocular-parfait-39ce10.netlify.app", // ✅ Netlify URL
+    credentials: true, // 🔐 allow cookies/auth headers
+  })
+);
+
 
 app.use(appRouter); 
 app.use("/api", userRouter);
