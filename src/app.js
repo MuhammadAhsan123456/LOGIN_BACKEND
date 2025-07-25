@@ -14,9 +14,8 @@ app.use(cookieParser());
 
 // server.js or app.js — jahan tumne express & cors use kiya hai
 
-const cors = require("cors");
 app.use(cors({
-  origin: "https://dainty-marzipan-529b6a.netlify.app", // ✅ only one https://
+  origin: "http://localhost:5173", // ✅ only one https://
   credentials: true
 }));
 
