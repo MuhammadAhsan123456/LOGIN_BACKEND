@@ -15,7 +15,7 @@ app.use(cookieParser());
 // server.js or app.js — jahan tumne express & cors use kiya hai
 
 app.use(cors({
-  origin: "http://localhost:5173", // ✅ only one https://
+  origin: "http://fastidious-sawine-cb18da.netlify.app", // ✅ only one https://
   credentials: true
 }));
 
