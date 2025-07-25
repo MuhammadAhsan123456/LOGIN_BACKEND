@@ -15,7 +15,7 @@ app.use(cookieParser());
 // server.js or app.js — jahan tumne express & cors use kiya hai
 
 app.use(cors({
-  origin: "http://fastidious-sawine-cb18da.netlify.app", // ✅ only one https://
+  origin: "https://lucent-choux-e3ffd2.netlify.app/", // ✅ only one https://
   credentials: true
 }));
 
