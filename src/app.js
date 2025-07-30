@@ -34,31 +34,32 @@
 //     console.log("Server is running on port 5000")
 // })
 
-const express = require("express")
+const express = require("express");
 const cors = require("cors");
-const { connectToDB } = require("./config/database")
-const { appRouter } = require("./router/auth"); 
-const { userRouter } = require("./router/user");
 const cookieParser = require("cookie-parser");
-const serverless = require("serverless-http"); // ✅ ADD THIS
+const { connectToDB } = require("./config/database");
+const { appRouter } = require("./router/auth");
+const { userRouter } = require("./router/user");
 
 const app = express();
+
 app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: "http://localhost:5173", // ya tumhara frontend Netlify URL
+  origin: "https://your-frontend.netlify.app",  // ✅ Update to actual frontend URL
   credentials: true
 }));
 
-app.use(appRouter); 
+app.use(appRouter);
 app.use("/api", userRouter);
 
 connectToDB()
-  .then(() => console.log("Database is connected to MongoDB"))
-  .catch((err) => console.log(err));
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.error(err));
 
-// ❌ Remove app.listen
-// ✅ Instead export as serverless
-module.exports.handler = serverless(app);
+// ❌ NO app.listen here
+
+module.exports = app; // ✅ export app for Vercel
+
 
