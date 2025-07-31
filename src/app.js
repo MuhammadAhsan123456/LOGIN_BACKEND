@@ -36,18 +36,17 @@
 
 const express = require("express");
 const cors = require("cors");
-const cookieParser = require("cookie-parser");
 const { connectToDB } = require("./config/database");
 const { appRouter } = require("./router/auth");
 const { userRouter } = require("./router/user");
+const cookieParser = require("cookie-parser");
 
 const app = express();
-
 app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: "https://lighthearted-stardust-9b84cb.netlify.app",  // ✅ Update to actual frontend URL
+  origin: "http://localhost:5173",
   credentials: true
 }));
 
@@ -55,11 +54,10 @@ app.use(appRouter);
 app.use("/api", userRouter);
 
 connectToDB()
-  .then(() => console.log("MongoDB connected"))
-  .catch(err => console.error(err));
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.error("MongoDB Error:", err));
 
-// ❌ NO app.listen here
+module.exports = app; // ✅ sirf export, no app.listen()
 
-module.exports = app; // ✅ export app for Vercel
 
 
