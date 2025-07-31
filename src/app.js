@@ -53,6 +53,11 @@ app.use(cors({
 app.use(appRouter);
 app.use("/api", userRouter);
 
+// ✅ Add this route at the end
+app.get("/", (req, res) => {
+  res.send("Backend is working!");
+});
+
 connectToDB()
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.error("MongoDB Error:", err));
