@@ -47,7 +47,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: "https://your-frontend.netlify.app",  // ✅ Update to actual frontend URL
+  origin: "https://lighthearted-stardust-9b84cb.netlify.app",  // ✅ Update to actual frontend URL
   credentials: true
 }));
 
