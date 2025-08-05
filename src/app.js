@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: "https://magical-flan-4c901b.netlify.app", // ✅ ab ye daalo
+  origin: "https://luxury-pie-6a7c11.netlify.app", // ✅ ab ye daalo
   credentials: true
 }));
 
