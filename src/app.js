@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://elegant-griffin-702b07.netlify.app/",
   credentials: true
 }));
 
