@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: "https://elegant-griffin-702b07.netlify.app",
+  origin: "https://magical-flan-4c901b.netlify.app", // ✅ ab ye daalo
   credentials: true
 }));
 
