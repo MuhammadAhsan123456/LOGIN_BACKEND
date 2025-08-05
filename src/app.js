@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: "https://startling-sprinkles-e081b9.netlify.app", // ✅ ab ye daalo
+  origin: "http://localhost:5173",
   credentials: true
 }));
 
