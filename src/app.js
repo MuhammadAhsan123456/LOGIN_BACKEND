@@ -4,6 +4,8 @@ const { connectToDB } = require("./config/database")
 const { appRouter } = require("./router/auth"); 
 const { userRouter } = require("./router/user");
 const cookieParser = require("cookie-parser");
+require('dotenv').config();
+
 
 const app = express();
 app.use(express.json());
